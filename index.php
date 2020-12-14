@@ -1,7 +1,7 @@
 <?php
 
 
-require dirname( __DIR__ ) . '/discussions/require/php_/config.php' ;
+require('require/php_/config.php');
 //CSS + TITLE
 $header_title = 'accueil';
 $headerCss = 'css/header.css';

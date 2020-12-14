@@ -31,8 +31,7 @@ function inscription($login, $password, $confirm_password, $bdd){ // fonction in
                         $cryptedpass = password_hash($password, PASSWORD_BCRYPT); // CRYPTED 
                         $insert = "INSERT INTO utilisateurs (login, password) VALUES ('$login', '$cryptedpass')"; // insertion de l'inscription dans la $bdd
                         mysqli_query($bdd,$insert);
-                        var_dump(mysqli_query($bdd,$insert));
-                        // redirect('connexion.php'); // on configure la valeur de redirect qui est une variable de type string a la base
+                        redirect('connexion.php'); // on configure la valeur de redirect qui est une variable de type string a la base
                     }
                 else{
                     $errorLog = "Confirmation du mot de passe incorrect";
