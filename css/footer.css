@@ -1,0 +1,47 @@
+footer{
+height:10vh;
+width:100%;
+background-color: black;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+}
+@font-face {
+    font-family: 'signature';
+    src: url(../fonts/signature/Zenzai-Itacha.ttf);
+}
+
+.article_signature {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 12%;
+
+}
+
+.font_signature {
+    /* signature dev */
+    font-family: 'signature';
+    font-size: 1.3em;
+    color:white;
+
+}
+.img_signature{
+    height:80px;
+    width:80px;
+}
+.bjr_utilisateur{
+    color:white;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+.footer_deco{
+    min-width:45vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
