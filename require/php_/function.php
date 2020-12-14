@@ -129,7 +129,9 @@ function profil($login, $password, $confirm_password, $bdd){
                     $utilisateur = $_SESSION['utilisateur']; 
                     $update = mysqli_query($bdd,"UPDATE utilisateurs SET login = '$login', password = '$cryptedpassword' WHERE id = '". $utilisateur['id']. "'"); //update des identifiants
                     echo ("les modifications on bien été effectuées");
-
+                    $sql = mysqli_query($bdd,"SELECT * FROM utilisateurs WHERE id = '". $utilisateur['id'] ."'");
+                    $fetch = mysqli_fetch_assoc($sql);
+                    $_SESSION['utilisateur'] = $fetch;
                 }
                 else{
                     $errorLog = "Confirmation du mot de passe incorrect";
