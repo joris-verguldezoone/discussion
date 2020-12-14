@@ -17,6 +17,7 @@ function inscription($login, $password, $confirm_password, $bdd){ // fonction in
             $password_length = strlen($password);
             $confirm_password_length = strlen($confirm_password);
             if(($login_length >=2) && ($password_length  >=5) && ($confirm_password_length >=4)){ // si les champs n'ont pas assez de caractere alors $errorLog
+                if(($login_length <=30) && ($password_length  <=30) && ($confirm_password_length <=30)){ // si les champs n'ont pas assez de caractere alors $errorLog
 
                 $query = mysqli_query($bdd, "SELECT login FROM utilisateurs WHERE login = '$login'");
                 $count = mysqli_num_rows($query);
@@ -41,6 +42,10 @@ function inscription($login, $password, $confirm_password, $bdd){ // fonction in
                 $errorLog = "Identifiant déjà existant";
                 }
             }
+            else{
+                $errorLog = "mdp et identifiant limités a 30 caractères";
+            }
+        }
             else{
                 $errorLog = "login, doit avoir 2 caracteres minimum, le mdp doit avoir 5 caracteres minimum";
             }
@@ -113,7 +118,8 @@ function profil($login, $password, $confirm_password, $bdd){
         $password_lenght = strlen($password);
         
         if(($login_lenght >=2) && ($password_lenght >=5) <=30){ // limitation du nbr de caractere minimum et maximum 
-        
+            if(($login_lenght <=30) && ($password_lenght  <=30)){ // si les champs n'ont pas assez de caractere alors $errorLog
+
             $query = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE id = '$login'"); // on selectionne le bon utilisateur par rapport à sa connexion
             // 
             $fetch = mysqli_fetch_assoc($query);//????
@@ -140,7 +146,11 @@ function profil($login, $password, $confirm_password, $bdd){
             else{
                 $errorLog = "identifiant déjà pris";
             }
-
+        }
+            else{
+                $errorLog = "mdp et identifiant limités a 30 caractères";
+            }
+        
         }
         else{
             $errorLog = "2 caracteres minimum pour le login et 5 pour le mot de passe";

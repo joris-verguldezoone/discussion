@@ -28,7 +28,7 @@ require_once('require/html_/header.php');
 <main>
 
 <section class="section_g">
-<p> Cyberpunk addiction </p>
+<p class="p_cyber"> Cyberpunk addiction </p>
     <iframe width="360" height="170" src="https://www.youtube.com/embed/Y59YFmrb39g"
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

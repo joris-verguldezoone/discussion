@@ -11,7 +11,7 @@ echo"
        <p class='font_signature'> HARDJOJO </p>
     </section>";
     if(isset($_SESSION['connected'])){
-        echo "<article class='footer_deco'><p class='bjr_utilisateur'> Bonjour ". strtoupper($utilisateur['login']) . "</p>"; // si on est connecté la class coucou nous fait coucou :-)
+        echo "<article class='footer_deco'><p class='bjr_utilisateur p_cyber'> Bonjour ". strtoupper($utilisateur['login']) . "</p>"; // si on est connecté la class coucou nous fait coucou :-)
     
         // si on est connecté le bouton deconnexion apparait + son pseudo
 
